@@ -1,4 +1,6 @@
-document.getElementById("btn").addEventListener("click", function () {
+document.getElementById("voteForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // stop page reload
+
   const name = document.getElementById("name").value.trim();
   const age = parseInt(document.getElementById("age").value.trim(), 10);
 
@@ -16,10 +18,10 @@ document.getElementById("btn").addEventListener("click", function () {
       }
     }, 4000);
   })
-    .then((name) => {
-      alert(`Welcome, ${name}. You can vote.`);
+    .then((userName) => {
+      alert(`Welcome, ${userName}. You can vote.`);
     })
-    .catch((name) => {
-      alert(`Oh sorry ${name}. You aren't old enough.`);
+    .catch((userName) => {
+      alert(`Oh sorry ${userName}. You aren't old enough.`);
     });
-});
+	
